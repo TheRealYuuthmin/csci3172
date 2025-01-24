@@ -6,7 +6,9 @@ Date created: 23 Jan 2025
 
 Last Modified: 23 Jan 2025
 
-Lab URL: web.cs.dal.ca/~bandara/csci3172/activities/lecture5/index.html
+Lab URL: 
+web.cs.dal.ca/~bandara/csci3172/activities/lecture5/index.html
+https://git.cs.dal.ca/bandara/csci3172/-/tree/main/activities/lecture5?ref_type=heads
 
 ## Author: Manuga Yuthmin Wijesundara Bandara B00944453
 
