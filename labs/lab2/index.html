@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Grades Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Student Grades Tracker</h1>
+  </header>
+
+  <main>
+    <table id="grades-table">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Course 1</th>
+          <th>Course 2</th>
+          <th>Course 3</th>
+          <th>Course 4</th>
+          <th>Average Number Grade</th>
+          <th>Letter Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be populated dynamically by JavaScript -->
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Overlay for detailed grade breakdown -->
+  <div id="overlay" class="overlay">
+    <div class="overlay-content">
+      <h2 id="student-name">Grade Breakdown</h2>
+      <table id="grade-breakdown">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Assignment 1 (15%)</th>
+            <th>Assignment 2 (15%)</th>
+            <th>Quiz 1 (10%)</th>
+            <th>Quiz 2 (10%)</th>
+            <th>Exam 1 (25%)</th>
+            <th>Exam 2 (25%)</th>
+            <th>Course Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Course breakdown will be populated dynamically -->
+        </tbody>
+      </table>
+      <button id="close-overlay" aria-label="Close overlay">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Student Grade Tracker </p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
