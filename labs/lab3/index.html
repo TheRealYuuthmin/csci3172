@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Inventory Management System</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <h1>Inventory Management System</h1>
+
+        <!-- Input field to add items -->
+         <div class="inputSection">
+            <input type="text" id="itemName" placeholder="Item Name">
+            <input type="text" id="itemType" placeholder="Item Type">
+            <input type="number" id="itemPrice" placeholder="Price of Item">
+            <input type="number" id="itemQuantity" placeholder="Quantity of Item">
+            <input type="text" id="itemDescription" placeholder="Item Description">
+            <button onclick="addItem()">Add Item</button>
+         </div>
+
+         <!-- Search Bar -->
+          <div class="searchSection">
+            <input type="text" id="textQuery" placeholder="Search by name or type">
+            <button onclick="searchItems()">Search</button>
+          </div>
+
+          <!-- Inventory  -->
+           <div class="inventorySection">
+            <h2>Inventory</h2>
+            <div id="inventoryList"></div>
+           </div>
+
+           <!-- Total Value Display -->
+            <div class="totalValue">
+                <h3>Total Inventory Value: <span id="totalValue">0</span></h3>
+            </div>
+
+            <!-- groupByCategory, findDuplicates, applyDiscount -->
+             <div class="extraFunctions">
+                <button onclick="groupByCategory()">Group by Category</button>
+                <button onclick="findDuplicates()">Find Duplicates</button>
+                <button onclick="applyDiscount(20)">Apply 20% Discount</button>
+            </div>
+
+            <script src="js/script.js"></script>
+    </body>
+</html>
