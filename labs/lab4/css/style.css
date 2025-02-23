@@ -1,0 +1,93 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f9f9f9; 
+    color: #333; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 350px; 
+    padding: 30px; 
+    background-color: #fff;
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease; 
+}
+
+form:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+}
+
+input {
+    padding: 12px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ddd;
+    border-radius: 6px; 
+    transition: border-color 0.3s ease; 
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff; 
+}
+
+button {
+    padding: 12px 20px; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-weight: 600; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); 
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3; 
+}
+
+p#regstrationMessage,
+p#loginMessage {
+    font-size: 15px; 
+    font-weight: 600; 
+    margin-top: 10px; 
+    padding: 10px 15px; 
+    border-radius: 8px; 
+    display: inline-block;
+    background-color: #f0f8ff; 
+    color: #2e8b57; 
+}
+
+.error-message {
+    color: #d32f2f; 
+    font-size: 0.95em; 
+    margin-top: 8px; 
+    background-color: #ffebee; 
+    padding: 8px; 
+    border-radius: 6px; 
+    text-align: center;
+    border: 1px solid #ef9a9a; 
+}
+
+.error {
+    border: 1px solid #d32f2f; 
+}
