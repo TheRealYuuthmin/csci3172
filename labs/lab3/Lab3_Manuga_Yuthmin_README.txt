@@ -1,10 +1,8 @@
-#CSCI 3172 Lab 3
+#CSCI 3172 Lab 3 Resubmission
 
-*Date Created: 02 Feb 2025
-*Last modified date:
+*Date Created: 22 March 2025
+*Last modified date: 22 March 2025
 *Lab URL:
-web.cs.dal.ca/~bandara/csci3172/labs/lab3/index.html
-https://git.cs.dal.ca/bandara/csci3172.git
 
 ##Author - Manuga Yuthmin Wijesundara Bandara B00944453
 
@@ -14,160 +12,83 @@ https://git.cs.dal.ca/bandara/csci3172.git
 *JavaScript
 
 ##Sources used: 
-
-###File: script.js
-Lines 29 - 46
-//Add item 
-function addItem(){
-    const name = document.getElementById('itemName').value;
-    const type = document.getElementById('itemType').value;
-    const price = parseFloat(document.getElementById('itemPrice').value);
-    const quantity = parseInt(document.getElementById('itemQuantity').value);
-    const description = document.getElementById('itemDescription').value;
-
-    if (name && type && price && quantity && description){
-        const newItem = {name, type, price, quantity, description};
-        inventory.push(newItem);
-        listItems();
-        calculateTotalValue;
-        clearInputs;
-    }else{
-        alert('Please fill in all fields.');
-    }
-}
-
-This code was adapted using the code in https://javascript.info/object as shown below: 
-// Example from JavaScript.info
-let user = {
-  name: "John",
-  age: 30
-};
-
-###File: Script.js
-Lines 61 - 65
-//Calculate total
-function calculateTotalValue(){
-    const total = inventory.reduce((sum, item) => sum + item.price* item.quantity, 0);
-    document.getElementById('totalValue').textContent = `$${total.toFixed(2)}`;
-}
-
-This code was adapted using the code in https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce as shown below: 
-
-// Example from MDN Web Docs
-const array1 = [1, 2, 3, 4];
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-console.log(array1.reduce(reducer));
-
-
-###File: Script.js
-Lines 151 - 161
-function groupByCategory(){
-    const grouped = inventory.reduce((acc,item) => {
-        if (!acc[item.type]){
-            acc[item.type] = [];
-        }
-        acc[item.type].push(item);
-        return acc;
-    }, {});
-
-    console.log(grouped);
-}
-
-This code was adapted by using the code in https://javascript.info/object#iteration as shown below: 
-
-// Example from JavaScript.info
-let user = {
-  name: "John",
-  age: 30
-};
-
-for (let key in user) {
-  alert(key);  // name, age
-  alert(user[key]); // John, 30
-}
-
-###Files: Script.js
-Lines 76 - 125
-//Search item
-function searchItems(){
-    const searchInput = document.getElementById('searchQuery');
-    if (!searchInput){
-        console.error('Search item not found.');
-        alert('Search item not found');
+Lines 15 - 90
+function searchItems() {
+    const query = document.getElementById("searchQuery").value.toLowerCase();
+    if (!query) {
+        alert("Please enter search parameters.");
         return;
     }
 
-    const query = searchInput.value.trim().toLowerCase();
-    if (!query){
-        listItems(); //if the query is empty
-        return;
-    }
-
-    const filteredItems = inventory.filter(item =>
-        item.name.toLowerCase().includes(query) || item.type.toLowerCase().includes(query)
+    const results = inventory.filter(item => 
+        Object.values(item).some(value => value.toString().toLowerCase().includes(query))
     );
 
-    const inventoryList = document.getElementById('inventoryList');
-    if (!inventoryList){
-        console.error('Inventory List not found.');
-        alert('Inventory List not found.');
-        return;
+    const inventoryList = document.getElementById("inventoryList");
+    inventoryList.innerHTML = results.length > 0 
+        ? results.map(item => `<div class="item-card"><strong>${item.name}</strong> - ${item.type} - $${item.price} - Qty: ${item.quantity} - ${item.description}</div>`).join("")
+        : "<p>No such item.</p>";
+}
+
+//Hide Search Result functionality
+function hideSearchResults() {
+    document.getElementById("inventoryList").innerHTML = "";
+}
+
+//Calculate total value function
+function calculateTotalValue() {
+    const totalValue = inventory.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    alert(`Total inventory value: $${totalValue}`);
+}
+
+//Apply Discount Function 
+function applyDiscount() {
+    const discount = parseFloat(document.getElementById("discountPercentage").value);
+    if (!isNaN(discount) && discount > 0) {
+        inventory.forEach(item => item.price -= (item.price * discount) / 100);
+        listItems();
+    } else {
+        alert("Enter a valid discount percentage! (1-100%)");
     }
+}
 
-    //Minimizing DOM reflows 
-    const fragment = document.createDocumentFragment();
-
-    filteredItems.forEach(item => {
-        if (!item.name || !item.type || !item.price || !item.quantity || !item.description){
-            console.warn('Invalid Item: ', item);
-            return; //Skip invalid items
-        }
-
-        const itemDiv = document.createElement('div');
-        itemDiv.className = 'item';
-        itemDiv.innerHTML = `
-            <strong>${item.name}</strong> (${item.type})<br>
-            Price: $${item.price}, Quantity: ${item.quantity}<br>
-            Description: ${item.description}<br>
-            <button onclick="removeItem('${item.name}')">Remove</button>
-        `;
-        fragment.appendChild(itemDiv);
+//Show Items function 
+function listItems() {
+    const inventoryList = document.getElementById("inventoryList");
+    inventoryList.innerHTML = "";
+    inventory.forEach(item => {
+        let itemDiv = document.createElement("div");
+        itemDiv.classList.add("item-card");
+        itemDiv.innerHTML = `<strong>${item.name}</strong> - ${item.type} - $${item.price} - Qty: ${item.quantity} - ${item.description}`;
+        inventoryList.appendChild(itemDiv);
     });
-
-    //Clear the container 
-    inventoryList.innerHTML = '';
-    inventoryList.appendChild(fragment);
 }
 
-This code was adapted by using https://javascript.info/modifying-document#document-fragment as shown below: 
-<ul id="ul"></ul>
-
-<script>
-function getListContent() {
-  let fragment = new DocumentFragment();
-
-  for(let i=1; i<=3; i++) {
-    let li = document.createElement('li');
-    li.append(i);
-    fragment.append(li);
-  }
-
-  return fragment;
+// Remove Item Function
+function removeItem() {
+    let nameToDelete = document.getElementById("removeItemName").value.toLowerCase();
+    let indexToDelete = inventory.findIndex(item => item.name.toLowerCase() === nameToDelete);
+    
+    if (indexToDelete !== -1) {
+        lastRemovedItem = inventory[indexToDelete];
+        inventory.splice(indexToDelete, 1);
+        listItems();
+    } else {
+        alert("Item not found.");
+    }
 }
 
-ul.append(getListContent()); // (*)
-</script>
+//Undo remove item function
+function undoRemoveItem() {
+    if (lastRemovedItem) {
+        inventory.push(lastRemovedItem);
+        lastRemovedItem = null;
+        listItems();
+    } else {
+        alert("No recent deletions to undo.");
+    }
+}
 
-Additionally, the code was adapted by using the code in https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment as shown in the code below: 
 
-const element = document.getElementById("ul"); // assuming ul exists
-const fragment = document.createDocumentFragment();
-const browsers = ["Firefox", "Chrome", "Opera", "Safari"];
+the above code was used by adapting: https://stackoverflow.com/questions/29382730/creating-a-simple-inventory-system-in-javascript
 
-browsers.forEach((browser) => {
-  const li = document.createElement("li");
-  li.textContent = browser;
-  fragment.appendChild(li);
-});
-
-element.appendChild(fragment);
