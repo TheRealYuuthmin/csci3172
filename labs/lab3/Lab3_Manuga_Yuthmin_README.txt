@@ -3,6 +3,8 @@
 *Date Created: 22 March 2025
 *Last modified date: 22 March 2025
 *Lab URL:
+https://git.cs.dal.ca/bandara/csci3172/-/tree/main/labs/lab3
+https://web.cs.dal.ca/~bandara/csci3172/labs/lab3/index.html
 
 ##Author - Manuga Yuthmin Wijesundara Bandara B00944453
 
