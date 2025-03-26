@@ -42,17 +42,14 @@
 }
 
 header {
-  background-color: #007bff;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+  background-color: #f0f0f0;
+  padding: 10px;
 }
 
 nav a {
-  color: white;
+  margin-right: 10px;
   text-decoration: none;
-  margin: 0 1rem;
-  font-weight: bold;
+  color: #333;
 }
 
 footer {
@@ -62,71 +59,4 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-}
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-[data-theme='dark'] {
-  background-color: #222;
-  color: #eee;
-}
-
-[data-theme='light'] {
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-main {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-section {
-  margin-bottom: 2rem;
-}
-
-.footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-.project-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.project-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.weather-info {
-  background-color: #e0f7fa;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 1rem;
 }
