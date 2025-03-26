@@ -1,19 +1,17 @@
 import React from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function Home() {
-  return React.createElement(
-    'div',
-    { className: 'container mt-5' },
-    React.createElement(
-      'h1',
-      null,
-      'Welcome to My Portfolio'
-    ),
-    React.createElement(
-      'p',
-      null,
-      'This is my personal portfolio, showcasing my skills and projects.'
-    )
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <h1>Welcome to My Portfolio</h1>
+          <p>This is my personal portfolio website.</p>
+          <Button variant="primary">Learn More</Button>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

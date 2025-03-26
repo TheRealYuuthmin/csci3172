@@ -1,27 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import NotFound from './pages/NotFound';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
-  return React.createElement(
-    Router,
-    null,
-    React.createElement(Header, null),
-    React.createElement(
-      Routes,
-      null,
-      React.createElement(Route, { path: '/', element: React.createElement(Home, null) }),
-      React.createElement(Route, { path: '/about', element: React.createElement(About, null) }),
-      React.createElement(Route, { path: '/projects', element: React.createElement(Projects, null) }),
-      React.createElement(Route, { path: '*', element: React.createElement(NotFound, null) })
-    ),
-    React.createElement(Footer, null)
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
