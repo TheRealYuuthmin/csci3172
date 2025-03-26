@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link } from '../../node_modules/react-router-dom'; 
 function NotFound() {
   return React.createElement(
     'div',
@@ -22,5 +21,3 @@ function NotFound() {
     )
   );
 }
-
-export default NotFound;
