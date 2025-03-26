@@ -15,13 +15,19 @@ function Home() {
   }
 
   return (
-    <div>
-      <h1>Welcome to My Portfolio</h1>
-      <p>City: {weather.city}</p>
-      <p>Temperature: {weather.temperature} °C</p>
-      <p>Humidity: {weather.humidity}%</p>
-      <p>Description: {weather.description}</p>
-    </div>
+    <main>
+      <section>
+        <h1>Welcome to My Portfolio</h1>
+        <img src="/images/halifaxSkyline.jpg" alt="Halifax Skyline" style={{ maxWidth: '100%', height: 'auto' }} />
+      </section>
+
+      <section className="weather-info">
+        <h2>Weather in {weather.city}</h2>
+        <p>Temperature: {weather.temperature} °C</p>
+        <p>Humidity: {weather.humidity}%</p>
+        <p>Description: {weather.description}</p>
+      </section>
+    </main>
   );
 }
 

@@ -1,14 +1,14 @@
 [
     {
-      "name": "My First Project",
-      "author": "Your Name",
-      "languages": ["React", "JavaScript", "HTML", "CSS"],
-      "description": "A simple web app I built."
+      "name": "WhatsApp Extension Prototype",
+      "author": "Manuga Yuthmin, and Nabil Haniffa",
+      "languages": ["Figma", "Canva"],
+      "description": "This project involved designing and developing an Android extension for WhatsApp to enhance user experience with additional features. Collaborating in a team of two, I played a key role in analyzing user needs, designing the system architecture, and implementing core functionalities. The prototype underwent rigorous testing to ensure efficiency, usability, and performance. Based on user feedback, we iterated on the design to improve its effectiveness. The project was documented comprehensively, and findings were presented to peers and faculty."
     },
     {
-      "name": "API Integration Project",
-      "author": "Your Name",
-      "languages": ["Node.js", "Express", "API"],
-      "description": "Project integrating a third-party API."
+      "name": "Quick Cash – Job Marketplace App",
+      "author": "Manuga Yuthmin, Dylan Godon-Ferguson, Manal Jaleel, Aidan West, Dax Xiong, Samuel Buonaguro",
+      "languages": ["Firebase", "Android Studio", "Java", "Pay-Pal Integration"],
+      "description": "Quick Cash is a mobile application designed to streamline job postings and hiring. Built by a team of six, it enables users to register as either employees or employers, offering tailored functionality for each role. Employees can search for jobs, apply filters, and set distance preferences, while employers can post jobs and process payments securely via PayPal. The app is fully functional and integrates Firebase for real-time data management and authentication. Deployment is planned for mid-April 2025."
     }
   ]
