@@ -1,11 +1,19 @@
 import React from 'react';
 
 function Home() {
-  return (
-    <div className="container mt-5">
-      <h1>Welcome to My Portfolio</h1>
-      <p>This is my personal portfolio, showcasing my skills and projects.</p>
-    </div>
+  return React.createElement(
+    'div',
+    { className: 'container mt-5' },
+    React.createElement(
+      'h1',
+      null,
+      'Welcome to My Portfolio'
+    ),
+    React.createElement(
+      'p',
+      null,
+      'This is my personal portfolio, showcasing my skills and projects.'
+    )
   );
 }
 

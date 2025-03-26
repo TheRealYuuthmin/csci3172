@@ -9,17 +9,19 @@ import NotFound from './pages/NotFound';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </Router>
+  return React.createElement(
+    Router,
+    null,
+    React.createElement(Header, null),
+    React.createElement(
+      Routes,
+      null,
+      React.createElement(Route, { path: '/', element: React.createElement(Home, null) }),
+      React.createElement(Route, { path: '/about', element: React.createElement(About, null) }),
+      React.createElement(Route, { path: '/projects', element: React.createElement(Projects, null) }),
+      React.createElement(Route, { path: '*', element: React.createElement(NotFound, null) })
+    ),
+    React.createElement(Footer, null)
   );
 }
 
