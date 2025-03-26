@@ -1,14 +1,10 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function About() {
   return (
-    <div className="container mt-5">
+    <div>
       <h1>About Me</h1>
-      <p>Education: ...</p>
-      <p>Experience: ...</p>
-      <p>Career Goals: ...</p>
-      <p>Technical Skills: ...</p>
+      <p>This is where you can write about yourself.</p>
     </div>
   );
 }

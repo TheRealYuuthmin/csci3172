@@ -1,0 +1,14 @@
+[
+    {
+      "name": "My First Project",
+      "author": "Your Name",
+      "languages": ["React", "JavaScript", "HTML", "CSS"],
+      "description": "A simple web app I built."
+    },
+    {
+      "name": "API Integration Project",
+      "author": "Your Name",
+      "languages": ["Node.js", "Express", "API"],
+      "description": "Project integrating a third-party API."
+    }
+  ]
