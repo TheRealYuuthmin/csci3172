@@ -18,7 +18,7 @@ function Home() {
     <main>
       <section>
         <h1>Welcome to My Portfolio</h1>
-        <img src="halifaxSkyline.jpg" alt="Halifax Skyline" style={{ maxWidth: '100%', height: 'auto' }} />
+        <img src="/src/assets/halifaxSkyline.jpg" alt="Halifax Skyline" style={{ maxWidth: '100%', height: 'auto' }} />
       </section>
 
       <section className="weather-info">
