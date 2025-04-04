@@ -24,7 +24,7 @@ app.get('/weather', async (req, res) => {
   const apiKey = process.env.OPENWEATHERMAP_API_KEY;
   const city = 'Halifax'; 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=<span class="math-inline">\{city\}&appid\=</span>{apiKey}&units=metric`;
-
+  
   try {
     const response = await axios.get(url);
     const { name, main, weather } = response.data;
