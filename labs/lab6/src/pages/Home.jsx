@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getWeatherData } from '../services/api';
+import halifaxSkyline from '../assets/halifaxSkyline.jpg';
 
 function Home() {
   const [weather, setWeather] = useState(null);
@@ -18,7 +19,7 @@ function Home() {
     <main>
       <section>
         <h1>Welcome to My Portfolio</h1>
-        <img src="/src/assets/halifaxSkyline.jpg" alt="Halifax Skyline" style={{ maxWidth: '100%', height: 'auto' }} />
+        <img src={halifaxSkyline} alt="Halifax Skyline" style={{ maxWidth: '100%', height: 'auto' }} />
       </section>
 
       <section className="weather-info">
