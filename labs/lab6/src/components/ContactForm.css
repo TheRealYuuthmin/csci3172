@@ -1,0 +1,144 @@
+/* Basic styling for the contact form and feedback */
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--form-bg-color, #f9f9f9); /* Use CSS variables for theming */
+  }
+  
+  [data-theme='dark'] .contact-form {
+      --form-bg-color: #444;
+      border-color: #555;
+  }
+  
+  
+  .contact-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--form-header-color, #333);
+  }
+  
+  [data-theme='dark'] .contact-form h2 {
+       --form-header-color: #eee;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+     color: var(--form-label-color, #555);
+  }
+  [data-theme='dark'] .form-group label {
+      --form-label-color: #ccc;
+  }
+  
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    background-color: var(--input-bg-color, #fff);
+    color: var(--input-text-color, #333);
+  }
+  
+  [data-theme='dark'] .form-group input[type="text"],
+  [data-theme='dark'] .form-group input[type="email"],
+  [data-theme='dark'] .form-group textarea {
+      --input-bg-color: #555;
+      --input-text-color: #eee;
+      border-color: #666;
+  }
+  
+  
+  .form-group input[aria-invalid="true"],
+  .form-group textarea[aria-invalid="true"] {
+    border-color: #dc3545; /* Red border for invalid fields */
+  }
+  
+  .form-group-checkbox {
+    display: flex;
+    align-items: center;
+     position: relative; /* For absolute positioning of checkbox error */
+      padding-bottom: 1.5rem; /* Space for potential error message */
+  }
+  
+  .form-group-checkbox input[type="checkbox"] {
+    margin-right: 0.5rem;
+     width: auto; /* Override default width */
+     flex-shrink: 0; /* Prevent checkbox from shrinking */
+  }
+  .form-group-checkbox .consent-label {
+      margin-bottom: 0; /* Override default label margin */
+      font-weight: normal;
+  }
+  
+  .error-message {
+    color: #dc3545; /* Red color for error messages */
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+  }
+  /* Position checkbox error below the checkbox */
+  .error-message-checkbox {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+  }
+  
+  
+  .status-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .status-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .status-info {
+    background-color: #e2e3e5;
+    color: #383d41;
+    border: 1px solid #d6d8db;
+  }
+  
+  
+  .contact-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button[type="submit"]:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  .contact-form button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }

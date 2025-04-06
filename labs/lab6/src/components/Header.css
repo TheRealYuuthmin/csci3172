@@ -1,0 +1,52 @@
+
+.app-header {
+    background-color: var(--header-bg-color, #f8f9fa); /* Light grey default */
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 1rem; /* Space below header */
+  }
+  
+  [data-theme='dark'] .app-header {
+      --header-bg-color: #343a40; /* Dark grey */
+      border-bottom-color: #495057;
+  }
+  
+  
+  .app-nav {
+    display: flex;
+    justify-content: center; /* Center nav links */
+    gap: 1.5rem; /* Space between links */
+  }
+  
+  .nav-link {
+    color: var(--nav-link-color, #007bff); /* Blue default */
+    text-decoration: none;
+    padding: 0.5rem 0; /* Padding top/bottom */
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+    position: relative; /* For potential underline effect */
+  }
+  
+  [data-theme='dark'] .nav-link {
+      --nav-link-color: #6cafff; /* Lighter blue for dark mode */
+  }
+  
+  
+  .nav-link:hover {
+     color: var(--nav-link-hover-color, #0056b3);
+     text-decoration: none; /* Remove default hover underline if any */
+  }
+  [data-theme='dark'] .nav-link:hover {
+      --nav-link-hover-color: #a1d7ff;
+  }
+  
+  
+  /* Style for the active link */
+  .nav-link.active {
+    color: var(--nav-link-active-color, #343a40);
+    font-weight: bold;
+
+  }
+  [data-theme='dark'] .nav-link.active {
+      --nav-link-active-color: #ffffff; 
+  }
