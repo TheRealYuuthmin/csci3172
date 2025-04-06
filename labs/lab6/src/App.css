@@ -1,144 +1,108 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Profile image styling from About page */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  border: 3px solid var(--color-border, var(--color-border-light)); 
+}
+[data-theme='dark'] .profile-img {
+  border-color: var(--color-border-dark);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-header {
-  background-color: #f0f0f0;
-  padding: 10px;
-}
-
-nav a {
-  margin-right: 10px;
-  text-decoration: none;
-  color: #333;
-}
-
-footer {
-  background-color: #f0f0f0;
-  padding: 10px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-[data-theme='dark'] {
-  background-color: #222;
-  color: #eee;
-}
-
-[data-theme='light'] {
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-header {
-  background-color: #007bff; /* Blue header */
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: bold;
-}
-
-main {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-section {
-  margin-bottom: 2rem;
-}
-
-.footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
+/* Project Card styling */
 .project-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  background-color: var(--color-card-bg, var(--color-card-bg-light));
+  border: 1px solid var(--color-border, var(--color-border-light));
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px var(--color-card-shadow, var(--color-card-shadow-light));
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
+[data-theme='dark'] .project-card {
+    background-color: var(--color-card-bg-dark);
+    border-color: var(--color-border-dark);
+    box-shadow: 0 2px 5px var(--color-card-shadow-dark);
+}
+
+.project-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px var(--color-card-shadow, var(--color-card-shadow-light));
+}
+[data-theme='dark'] .project-card:hover {
+     box-shadow: 0 5px 15px var(--color-card-shadow-dark);
+}
+
 
 .project-card img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
   margin-bottom: 1rem;
-}
-
-.weather-info {
-  background-color: #e0f7fa;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
   display: block;
-  margin: 0 auto 1rem;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: var(--color-primary, var(--color-primary-light));
+}
+[data-theme='dark'] .project-card h3 {
+    color: var(--color-primary-dark);
+}
+
+/* Weather Info box styling */
+.weather-info {
+  background-color: var(--color-secondary, var(--color-secondary-light));
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  border: 1px solid var(--color-border, var(--color-border-light));
+}
+[data-theme='dark'] .weather-info {
+    background-color: var(--color-secondary-dark);
+    border-color: var(--color-border-dark);
+}
+
+.weather-info h2 {
+    margin-top: 0;
+}
+
+/* Footer Styling */
+.app-footer {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: var(--color-secondary, var(--color-secondary-light));
+  border-top: 1px solid var(--color-border, var(--color-border-light));
+  color: var(--color-text, var(--color-text-light));
+  margin-top: auto;
+}
+[data-theme='dark'] .app-footer {
+    background-color: var(--color-secondary-dark);
+    border-top-color: var(--color-border-dark);
+    color: var(--color-text-dark);
+}
+
+/* Theme Switcher Button Position */
+.theme-switcher-container { 
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000; 
+}
+.theme-switcher-container button {
+    padding: 0.4em 0.8em; 
+    font-size: 0.9em;
+}
+
+.home-skyline { 
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+[data-theme='dark'] .home-skyline {
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

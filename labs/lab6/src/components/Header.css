@@ -1,52 +1,56 @@
-
 .app-header {
-    background-color: var(--header-bg-color, #f8f9fa); /* Light grey default */
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid #dee2e6;
-    margin-bottom: 1rem; /* Space below header */
+    background-color: var(--color-secondary, var(--color-secondary-light));
+    padding: 1rem 1.5rem; 
+    border-bottom: 1px solid var(--color-border, var(--color-border-light));
+    position: sticky;
+    top: 0;
+    z-index: 999; 
+    backdrop-filter: blur(5px); 
+    background-color: rgba(248, 249, 250, 0.8);
   }
   
   [data-theme='dark'] .app-header {
-      --header-bg-color: #343a40; /* Dark grey */
-      border-bottom-color: #495057;
+      background-color: rgba(42, 42, 42, 0.8); 
+      border-bottom-color: var(--color-border-dark);
   }
-  
   
   .app-nav {
     display: flex;
-    justify-content: center; /* Center nav links */
-    gap: 1.5rem; /* Space between links */
+    justify-content: center;
+    align-items: center; 
+    gap: 2rem; 
+    max-width: 960px; 
+    margin: 0 auto; 
   }
   
   .nav-link {
-    color: var(--nav-link-color, #007bff); /* Blue default */
+    color: var(--color-text, var(--color-text-light)); 
     text-decoration: none;
-    padding: 0.5rem 0; /* Padding top/bottom */
+    padding: 0.5rem 0;
     font-weight: 500;
     transition: color 0.2s ease-in-out;
-    position: relative; /* For potential underline effect */
+    position: relative;
+    border-bottom: 2px solid transparent; 
   }
-  
-  [data-theme='dark'] .nav-link {
-      --nav-link-color: #6cafff; /* Lighter blue for dark mode */
-  }
-  
+  [data-theme='dark'] .nav-link { color: var(--color-text-dark); }
   
   .nav-link:hover {
-     color: var(--nav-link-hover-color, #0056b3);
-     text-decoration: none; /* Remove default hover underline if any */
+     color: var(--color-primary, var(--color-primary-light));
+     text-decoration: none;
+     border-bottom-color: transparent; 
   }
   [data-theme='dark'] .nav-link:hover {
-      --nav-link-hover-color: #a1d7ff;
+      color: var(--color-primary-dark);
   }
   
   
   /* Style for the active link */
   .nav-link.active {
-    color: var(--nav-link-active-color, #343a40);
-    font-weight: bold;
-
+    color: var(--color-primary, var(--color-primary-light));
+    font-weight: 600;
+    border-bottom-color: var(--color-primary, var(--color-primary-light));
   }
   [data-theme='dark'] .nav-link.active {
-      --nav-link-active-color: #ffffff; 
+      color: var(--color-primary-dark);
+      border-bottom-color: var(--color-primary-dark);
   }
