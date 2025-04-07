@@ -1,0 +1,14 @@
+[
+    {
+      "name": "WhatsApp Extension Protoype",
+      "author": "Manuga Yuthmin & Nabil Haniffa",
+      "languages": ["Figma", "Canva"],
+      "description": "This project involved designing and developing an Android extension for WhatsApp to enhance user experience with additional features. Collaborating in a team of two, I played a key role in analyzing user needs, designing the system architecture, and implementing core functionalities. The prototype underwent rigorous testing to ensure efficiency, usability, and performance. Based on user feedback, we iterated on the design to improve its effectiveness. The project was documented comprehensively, and findings were presented to peers and faculty."
+    },
+    {
+      "name": "Quick Cash – Job Marketplace App",
+      "author": "Manuga Yuthmin, Dylan Godon-Ferguson, Manal Jaleel, Aidan West, Samuel Boudongo",
+      "languages": ["Android Studio", "Java", "Firebase"],
+      "description": "Quick Cash is a mobile application designed to connect employers with job-seeking employees efficiently. Developed in a team of six, the app features role-based access, where employees can search for jobs, apply filters, and set distance preferences, while employers can post job listings and process payments. The backend is powered by Firebase, ensuring real-time data management and seamless authentication. The application is fully functional and is set for deployment in mid-April 2025"
+    }
+  ]
